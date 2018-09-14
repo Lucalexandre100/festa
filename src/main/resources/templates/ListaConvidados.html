@@ -29,16 +29,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>João</td>
-						<td>3</td>
+					<tr th:each="convidado : ${convidados}">
+						<td th:text="${convidado.nome}"></td>
+						<td th:text="${convidado.quantidadeAcompanhantes}"></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </body>
 
 
