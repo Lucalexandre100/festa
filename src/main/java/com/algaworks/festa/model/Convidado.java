@@ -2,8 +2,9 @@ package com.algaworks.festa.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Convidado {
@@ -11,7 +12,9 @@ public class Convidado {
 	public static final long serialVersionUID =1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY) //para Mysql
+	@GeneratedValue(generator = "increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
 	private long id;
 	private String nome;
 	private Integer quantidadeAcompanhantes;
