@@ -11,7 +11,7 @@ import com.algaworks.festa.model.Convidado;
 import com.algaworks.festa.repository.Convidados;
 
 @Controller
-@RequestMapping("/convidados")
+@RequestMapping("/")
 public class ConvidadosController {
 
 	@Autowired
@@ -28,7 +28,7 @@ public class ConvidadosController {
 	@PostMapping
 	public String salvar(Convidado convidado) {
 		this.convidados.save(convidado);
-		return "redirect:/convidados";
+		return "redirect:/";
 	}
 
 }
