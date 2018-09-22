@@ -4,15 +4,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication
 .builders.AuthenticationManagerBuilder;
 
-//@Configuration
+@Configuration
 public class InMemorySecurityConfig {
 
-	//@Autowired
+	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder builder)
 			throws Exception {
 		builder
 		.inMemoryAuthentication()
-		.withUser("joao").password("123").roles("USER")
+		.withUser("joao").password("$2a$10$JvyF9q/k/eYwXTVjc4Ay0OT/dCwjW14eT88q3e587jaENTvtt30s2").roles("USER")
 		.and()
 		.withUser("alexandre").password("123").roles("USER")
 		.and()
